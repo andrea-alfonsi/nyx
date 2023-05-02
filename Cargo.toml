@@ -1,0 +1,21 @@
+[package]
+name = "nyx"
+version = "0.1.0"
+edition = "2021"
+authors = ["Andrea Alfonsi"]
+description = ""
+readme = "README.md"
+license-file = "LICENSE"
+exclude = ["plugin-test"]
+keywords = ["dynamic", "helper", "modular", "plugin"]
+
+[build-dependencies]
+rustc_version = "0.4.0"
+
+[dependencies]
+libloading = "0.8.0"
+
+[workspace]
+members = [
+  "plugin-test"
+]
