@@ -3,11 +3,12 @@ name = "nyx"
 version = "0.1.0"
 edition = "2021"
 authors = ["Andrea Alfonsi"]
-description = ""
+description = "With this crate, you can easily create a modular Rust application that can dynamically load functions and plugins at runtime."
 readme = "README.md"
 license-file = "LICENSE"
 exclude = ["plugin-test"]
 keywords = ["dynamic", "helper", "modular", "plugin"]
+repository = "https://github.com/andrea-alfonsi/nyx"
 
 [build-dependencies]
 rustc_version = "0.4.0"
