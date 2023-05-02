@@ -1,5 +1,5 @@
 [package]
-name = "nyx"
+name = "nyx-forge"
 version = "0.1.0"
 edition = "2021"
 authors = ["Andrea Alfonsi"]

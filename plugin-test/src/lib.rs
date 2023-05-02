@@ -1,5 +1,5 @@
 
-use nyx::{export_plugin, runtime::plugin::*};
+use nyx_forge::{export_plugin, runtime::plugin::*};
 
 export_plugin!(register);
 
