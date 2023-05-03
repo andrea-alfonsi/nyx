@@ -2,7 +2,7 @@ use std::fmt::Debug;
 
 use super::{FromRegistry, Handler};
 
-/// The `Service` is the starting point of the static dispatch fuctionality of the crate.
+/// The `Service` is the starting point of the compile time dispatch fuctionality of the crate.
 /// It allows any function and closure to became a statically dispatched function. 
 /// It supports up to 15 arguments.
 /// 
@@ -13,7 +13,7 @@ use super::{FromRegistry, Handler};
 /// and then calls the target function  with the custom parameters
 /// 
 /// ```
-/// use nyx::compile_time::Service;
+/// use aanyx::compile_time::Service;
 /// let return_always_true = ||{true};
 /// let registry = ();
 /// let my_service = Service::new( Box::new( return_always_true ) );
@@ -27,7 +27,7 @@ impl<Registry: 'static, Return: 'static> Service<Registry, Return> {
 
   /// Create a new `Service` from a `Box` containing a function or a closure.
   /// ```
-  /// use nyx::compile_time::Service;
+  /// use aanyx::compile_time::Service;
   /// let return_always_true = ||{true};
   /// let registry = ();
   /// let my_service = Service::new( Box::new( return_always_true ) );
@@ -39,9 +39,9 @@ impl<Registry: 'static, Return: 'static> Service<Registry, Return> {
     })}
   }
 
-  /// Replace the handler inside a service with another
+  /// Replace the handler inside a service with another handler
   /// ```
-  /// use nyx::compile_time::Service;
+  /// use aanyx::compile_time::Service;
   /// let return_always_true = ||{true};
   /// let return_always_false = ||{false};
   /// let registry = ();
@@ -57,7 +57,7 @@ impl<Registry: 'static, Return: 'static> Service<Registry, Return> {
 
   /// Run the function inside the service, given the `Registry` containing all the data
   /// ```
-  /// use nyx::compile_time::Service;
+  /// use aanyx::compile_time::Service;
   /// let return_always_true = ||{true};
   /// let registry = ();
   /// let my_service = Service::new( Box::new( return_always_true ) );
@@ -109,5 +109,16 @@ mod tests {
 
     assert!( service0.call( &registry ));
     assert!( service1.call( &registry ));
+  }
+
+  #[test]
+  fn test_async_as_service(){
+    use futures::executor::block_on;
+
+    fn async_function() -> std::future::Ready<bool> { std::future::ready( true ) }
+    let registry = ();
+    let service = Service::new( Box::new( async_function ));
+    let result = service.call( &registry );
+    assert!(block_on( result ));
   }
 }

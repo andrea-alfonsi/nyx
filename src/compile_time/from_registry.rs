@@ -4,7 +4,7 @@ pub use hashmap::*;
 /// This trait is used to extract a type from a `Registry`. 
 /// If a `Registry` not implemented by default is used, then you should implement this trait for all the used traits.
 /// ```
-/// use nyx::compile_time::FromRegistry;
+/// use aanyx::compile_time::FromRegistry;
 /// # #[derive(Debug, PartialEq)]
 /// # struct MyStruct;
 /// # impl FromRegistry<()> for MyStruct {

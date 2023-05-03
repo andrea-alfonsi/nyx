@@ -16,13 +16,13 @@ impl<Prototype: ?Sized> Default for FunctionsRegistry<Prototype>{
 
 impl<Prototype: ?Sized> FunctionsRegistry<Prototype> {
   /// ```
-  /// use nyx::runtime::FunctionsRegistry;
+  /// use aanyx::runtime::FunctionsRegistry;
   /// # trait Prototype {};
   /// 
   /// let mut registry = FunctionsRegistry::<dyn Prototype>::new();
   /// ```
   /// ```
-  /// use nyx::runtime::FunctionsRegistry;
+  /// use aanyx::runtime::FunctionsRegistry;
   /// # trait Prototype {};
   /// 
   /// // Not registry can no longer load new plugins
@@ -36,7 +36,7 @@ impl<Prototype: ?Sized> FunctionsRegistry<Prototype> {
 
   /// Load a new plugin from a library and register all the functions inside
   /// ```
-  /// use nyx::runtime::FunctionsRegistry;
+  /// use aanyx::runtime::FunctionsRegistry;
   /// 
   /// trait Call {
   ///   fn call( &self );
@@ -81,7 +81,7 @@ impl<Prototype: ?Sized> FunctionsRegistry<Prototype> {
 
   /// Get the proxy of the function, which will be then used to dereference the plugin function
   /// ```
-  /// use nyx::runtime::FunctionsRegistry;
+  /// use aanyx::runtime::FunctionsRegistry;
   /// 
   /// trait Call {
   ///   fn call( &self );
@@ -98,7 +98,7 @@ impl<Prototype: ?Sized> FunctionsRegistry<Prototype> {
 
   /// Get an iterator over all the keys
   /// ```
-  /// use nyx::runtime::FunctionsRegistry;
+  /// use aanyx::runtime::FunctionsRegistry;
   /// 
   /// fn print_functions_name<Prototype>( functions_registry: &FunctionsRegistry<Prototype> ) {
   ///   for name in functions_registry.functions(){

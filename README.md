@@ -9,6 +9,7 @@ The package is split into two parts: one that can convert functions into service
 The first part of this crate allows for the creation of services at runtime. 
 A service is a function that can automatically extract arguments from a registry, making it possible to switch services at runtime.
 Overall, using services from this crate provides a flexible and efficient way to create modular applications that can be easily customized and extended at runtime.
+A performance analysis run with `criterion` can be found [here](./src/compile_time/README.md/#performance-analysis)
 
 ### HOW-TOs
 * [Implement custom registry](./src/compile_time/README.md#how-to-use-custom-registry)

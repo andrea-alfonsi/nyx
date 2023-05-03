@@ -1,7 +1,7 @@
 //! Implement the `FromRegistry` trait for the type `HashMap< TypeId, Box<dyn std::any::Any>>`
 //! ```
 //! use std::{collections::HashMap, any::TypeId, rc::Rc};
-//! use nyx::compile_time::{Service, from_registry::HashMapType};
+//! use aanyx::compile_time::{Service, from_registry::HashMapType};
 //! let mut map: HashMapType = HashMap::new();
 //! let data1 = Rc::new( String::from("Andrea") );
 //! let data2 = Rc::new( 120u8 );

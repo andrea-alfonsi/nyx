@@ -20,7 +20,7 @@ pub trait PluginRegistrar<Prototype: ?Sized = dyn std::any::Any> {
 
 /// This macro automatically creates all the components that are required by the app to load the plugin and check the compatibility
 /// ```
-/// use nyx::{runtime::plugin::PluginRegistrar, export_plugin};
+/// use aanyx::{runtime::plugin::PluginRegistrar, export_plugin};
 /// 
 /// struct MyPlugin;
 /// 
@@ -32,7 +32,7 @@ pub trait PluginRegistrar<Prototype: ?Sized = dyn std::any::Any> {
 /// 
 /// Or even better using traits:
 /// ```
-/// use nyx::{runtime::plugin::PluginRegistrar, export_plugin};
+/// use aanyx::{runtime::plugin::PluginRegistrar, export_plugin};
 /// # mod public_plugin_trait {
 /// #   pub trait MyPlugin {
 /// #     fn plugin( &self ){}

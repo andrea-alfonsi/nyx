@@ -2,7 +2,7 @@
 /// The magic of extraction from `Registry` into the right `Args` is done inside the `Service` struct.
 /// The trait is automatically implemented for all the functions up to 15 arguements
 /// ```
-/// use nyx::compile_time::handler::Handler;
+/// use aanyx::compile_time::handler::Handler;
 /// type Args = (String, u8);
 /// let args: Args = (String::from("Andrea"), 120u8);
 /// fn is_old_enough( name: String, age: u8) -> bool {
