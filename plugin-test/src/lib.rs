@@ -1,5 +1,5 @@
 
-use nyx_forge::{export_plugin, runtime::plugin::*};
+use aanyx::{export_plugin, runtime::plugin::*};
 
 export_plugin!(register);
 
