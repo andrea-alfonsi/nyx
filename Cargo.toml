@@ -1,17 +1,17 @@
 [package]
 name = "aanyx"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Andrea Alfonsi"]
 description = "With this crate, you can easily create a modular Rust application that can dynamically load functions and plugins at runtime."
 readme = "README.md"
 license-file = "LICENSE"
 exclude = ["plugin-test"]
-keywords = ["dynamic", "helper", "modular", "plugin"]
+keywords = ["plugin"]
 repository = "https://github.com/andrea-alfonsi/nyx"
 
 [[bench]]
-name = "aanyx-compile-time"
+name = "aanyx-system"
 harness = false
 
 [build-dependencies]
@@ -19,12 +19,7 @@ rustc_version = "0.4.0"
 
 [dependencies]
 libloading = "0.8.0"
+paste = "1.0.12"
 
 [dev-dependencies]
 criterion = { version = "0.4.0", features = ["html_reports"] }
-futures = "0.3.28"
-
-[workspace]
-members = [
-  "plugin-test"
-]
